@@ -21,7 +21,18 @@ while (i < listItem.length) {
     const element = document.createElement('li');
 
     //Aggiungiamo l'elemento della spesa
-    element.innerText = listItem[i];
+    const randomNumber = Math.floor(Math.random() * 2);
+    sentence = listItem[i];
+
+    switch (randomNumber) {
+        case 1:
+            sentence += '  <i class="text-primary fa-solid fa-check"></i>';
+            break;
+        case 0:
+            sentence += '  <i class="text-danger fa-solid fa-xmark"></i>';
+            break;
+    }
+    element.innerHTML = sentence;
 
     //Agganciamo il li all'ul
     orderedList.appendChild(element);
